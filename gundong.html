@@ -1,0 +1,203 @@
+<title>无缝轮播图</title>
+<style>
+    *{margin: 0;padding:0; }
+    ul{list-style: none;}
+    .banner{width: 1200px;height: 600px;border: 2px solid #ccc;margin: 100px auto;position: relative;overflow: hidden;}
+    .img{position: absolute;top: 0;left: 0}
+    .img li{float: left;width:1200px;height:600px;}
+    .num{position: absolute;bottom: 10px;width: 100%;text-align: center;font-size: 0;}
+    .num li{width: 10px;height: 10px;background:rgba(0,0,0,0.5);display: block;border-radius: 100%;display: inline-block;margin: 0 5px;cursor: pointer;}
+    .btn{display: none;}
+    .btn span{display: block;width: 50px;height: 100px;background: rgba(0,0,0,0.6);color: #fff;font-size: 40px;line-height: 100px;text-align: center;cursor:pointer;}
+    .btn .prev{position: absolute;left: 0;top: 50%;margin-top: -50px;}
+    .btn .next{position: absolute;right: 0;top: 50%;margin-top: -50px;}
+    .num .active{background-color: #fff;}
+</style>
+<script src="js/jquery-3.1.0.js"></script>
+</head>
+<body>
+<div class="banner">
+    <ul class="img">
+        <li class="slide1 animate-in" style="">
+            <div class="slide0 slides1" style="height:600px;">
+                <div class="info" style="position:absolute;left:900px;top:180px;"> <img src="images/ts-item1.png" width="223" height="65" alt=""> </div>
+                <img class="desktop-img" src="images/ts-item4.png" width="553" height="478" alt="" style="position:absolute;left:176px;top:80px; z-index: 3">
+                <img class="ts-item5 ipad-img" src="images/ts-item5.png" width="244" height="310" alt="" style="position:absolute;left:546px;top:243px; z-index: 4">
+                <img class="ts-item6 iphone-img" src="images/ts-item6.png" width="101" height="195" alt="" style="position:absolute;left:757px;top:364px;z-index: 5">
+                <img class="prodcut-item" src="images/ts-item2.png" width="902" height="491" alt="" style="position:absolute;left:103px;top:30px; z-index: 1">
+                <img class="mgnto-logo" src="images/mgnto-logo.png" width="116" height="33" alt=""  style="position:absolute;left:835px;top:526px; z-index: 6    ">
+                <img class="ts-item3" src="images/ts-item3.png" width="247" height="509" alt=""  style="position:absolute;left:647px;top:18px;">
+                <strong style="position:absolute;left:903px;top:255px; text-transform: uppercase;">Responsive ECOMMERCE Website <br>
+                    for plus size clothes &amp; clothing</strong>
+            </div>
+        </li>
+        <li class="slide2" style=" display: none;">
+            <div class="slide0 slides2" style="height:600px;">
+                <div class="info"> <img class="momu-item1" src="images/momu-item1.png" width="167" height="57" alt="" style="position:absolute;right:12.7%;top:12%; z-index: 3;"> </div>
+                <img class="desktop-img" src="images/momu-item4.png" width="555" height="478" alt="" style="position:absolute;left:176px;top:80px; z-index: 3">
+                <img class="momu-item5 ipad-img" src="images/momu-item5.png" width="244" height="310" alt="" style="position:absolute;left:546px;top:243px; z-index: 4">
+                <img class="momu-item6 iphone-img" src="images/momu-item6.png" width="101" height="196" alt="" style="position:absolute;left:757px;top:364px;z-index: 5">
+                <img class="momu-item2" src="images/momu-item2.png" width="327" height="109" alt="" style="position:absolute;right:5.7%;top:34%; z-index: 3;">
+                <img class="momu-item3" src="images/momu-item3.png" width="500" height="224" alt="" style="position:absolute;right:-0.3%;top:56%; z-index: 3;">
+                <img class="momu-item7" src="images/momu-item7.png" width="161" height="289" alt="" style="position:absolute;left:140px;top:269px; z-index: 3;">
+                <img class="mgnto-logo" src="images/mgnto-logo.png" width="116" height="33" alt=""   style="position:absolute;left:835px;top:526px; z-index: 6 ">
+                <strong  style="position:absolute;right:8.3%;top:29.5%; z-index: 4">Responsive ECOMMERCE Website for<br>
+                    Australia&acute;s leading furniture store</strong>
+            </div>
+        </li>
+        <li class="slide2"  style="display: none;">
+            <div class="slide0 slides3" style="height:600px;">
+                <div class="info" style="position:absolute;left:67%;top:9.5%; " > <img class="discounton-item3" src="images/discounton-item3.png" width="175" height="101" alt="" > </div>
+                <img class="discounton-item1" src="images/discounton-item1.png" width="1353" height="235" alt="" style="position:absolute;left:3%;top:9%; ">
+                <img class="discounton-item2" src="images/discounton-item2.png" width="1006" height="127" alt="" style="position:absolute;left:4.8%;top:2.3%; z-index: 4">
+                <img class="discounton-item5" src="images/discounton-item5.png" width="634" height="537" alt="" style="position:absolute;left:6.5%;top:10.5%; z-index: 4">
+                <img class="discounton-item4" src="images/discounton-item4.png" width="234" height="129" alt="" style="position:absolute;left:64.8%;top:67.7%; z-index: 4">
+                <img class="discounton-item6" src="images/discounton-item6.png" width="446" height="224" alt="" style="position:absolute;left:56.8%;top:32.2%; z-index: 4">
+                <strong style="position:absolute;left:63.5%;top:27%; z-index: 4">Discounton ANDROID &amp; IOS app<br>
+                    that helps you to find deals in your city</strong>
+            </div>
+        </li>
+        <li class="slide4"  style="display: none;" >
+            <div class="slide0 slides4" style="height:600px;">
+                <div class="info" style="position:absolute;left:66.5%;top:7%; z-index: 3"> <img src="images/badbacks-item1.png" width="210" height="73" alt=""> </div>
+                <img class="badbacks-item2" src="images/badbacks-item2.png" width="186" height="79" alt="" style="position:absolute;left:66.9%;top:32%; z-index: 3">
+                <img class="badbacks-item7 ipad-img" src="images/badbacks-item7.png" width="244" height="310" alt="" style="position:absolute;left:40.9%;top:37%; z-index: 3" >
+                <img class="badbacks-item8 iphone-img" src="images/badbacks-item8.png" width="101" height="195" alt="" style="position:absolute;left:58.5%;top:57.2%;  z-index: 4" >
+                <img class="desktop-img" src="images/badbacks-item3.png" width="553" height="478" alt="" style="position:absolute;left:10%;top:10.1%;z-index: 2" >
+                <img class="badbacks-item4" src="images/badbacks-item4.png" width="136" height="266" alt="" style="position:absolute;left:66.2%;top:45.2%; z-index: 3">
+                <img class="badbacks-item5" src="images/badbacks-item5.png" width="168" height="256" alt="" style="position:absolute;left:8%;top:51%; z-index: 3" >
+                <img class="badbacks-item6" src="images/badbacks-item6.png" width="930" height="224" alt="" style="position:absolute;left:12%;top:2%; z-index: 1">
+                <strong style="position:absolute;left:62.9%;top:20.3%; z-index: 3 ;text-align:center;">Responsive ECOMMERCE Website & DIGITAL STRATEGY<br>
+                    for back pain relief products</strong>
+                <div class="badbacks" style="position:absolute;left:-33%;top:89.8%; ">
+                    <img class="badbacks-bg" src="images/badbacks-bg.png" width="2000" height="61" alt=""  style="position:relative;">
+                </div>
+            </div>
+        </li>
+        <li class="slide3"  style="display: none;">
+            <div class="slide0 slides5" style="height:600px;">
+                <div class="info" style="position:absolute;left:66%;top:8%;  z-index: 4"> <img src="images/conplant-item1.png" width="250" height="52" alt=""> </div>
+                <img class="desktop-img" src="images/conplant-item2.png" width="553" height="478" alt="" style="position:absolute;left:10%;top:10.1%;z-index: 2">
+                <img class="conplant-item5 ipad-img" src="images/conplant-item5.png" width="243" height="310" alt="" style="position:absolute;left:40.9%;top:37%; z-index: 3" >
+                <img class="conplant-item6 iphone-img" src="images/conplant-item6.png" width="101" height="196" alt="" style="position:absolute;left:58.5%;top:57.2%;  z-index: 4">
+                <img class="conplant-item3" src="images/conplant-item3.png" width="464" height="339" alt="" style="position:absolute;left:57.3%;top:34%;  z-index: 4">
+                <img class="conplant-item4" src="images/conplant-item4.png" width="1317" height="465" alt="" style="position:absolute;left:-3%;top:-5%;  z-index: 1">
+                <img class="conplant-bg" src="images/conplant-bg.png" width="2000" height="119" alt="" style="position:absolute;left:-33%;top:80%;  z-index: 4">
+                <strong style="position:absolute;left:62.6%;top:26.4%;  z-index: 4; text-align:center;">Responsive Custome build Website for<br>
+                    Australia&acute;s leading compaction specialist</strong>
+            </div>
+        </li>
+        <li class="slide4"  style="display: none;">
+            <div class="slide0 slides6" style="height:600px;">
+                <div class="info" style="position:absolute;left:60%;top:7%;  z-index: 4"> <img src="images/bostonbabe-item1.png" width="286" height="45" alt="" > </div>
+                <img class="bostonbabe-item2" src="images/bostonbabe-item2.png" width="497" height="385" alt="" style="position:absolute;left:48%;top:8%;  z-index: 2">
+                <img class="bostonbabe-item3" src="images/bostonbabe-item3.png" width="803" height="428" alt="" style="position:absolute;left:1%;top:7%;  z-index: 4">
+                <img class="bostonbabe-item4" src="images/bostonbabe-item4.png" width="371" height="189" alt="" style="position:absolute;left:8%;top:60.6%;  z-index: 4">
+                <strong style="position:absolute;left:77.6%;top:20.4%;  z-index: 4">Ecommerce Website for<br>
+                    fashion footwear</strong>
+            </div>
+        </li>
+    </ul>
+    <ul class="num"></ul> //
+    <div class="btn">
+        <span class="prev"><</span>
+        <span class="next">></span>
+    </div>
+
+</div>
+
+<script>
+
+    $(function(){
+
+        var i=0;
+        var timer=null;
+        for (var j = 0; j < $('.img li').length; j++) {  //创建圆点
+            $('.num').append('<li></li>')
+        }
+        $('.num li').first().addClass('active'); //给第一个圆点添加样式
+
+        var firstimg=$('.img li').first().clone(); //复制第一张图片
+        $('.img').append(firstimg).width($('.img li').length*($('.img img').width())); //将第一张图片放到最后一张图片后，设置ul的宽度为图片张数*图片宽度
+
+
+        // 下一个按钮
+        $('.next').click(function(){
+            i++;
+            if (i==$('.img li').length) {
+                i=1; //这里不是i=0
+                $('.img').css({left:0}); //保证无缝轮播，设置left值
+            };
+
+            $('.img').stop().animate({left:-i*1200},300);
+            if (i==$('.img li').length-1) {   //设置小圆点指示
+                $('.num li').eq(0).addClass('active').siblings().removeClass('active');
+            }else{
+                $('.num li').eq(i).addClass('active').siblings().removeClass('active');
+            }
+
+        })
+
+        // 上一个按钮
+        $('.prev').click(function(){
+            i--;
+            if (i==-1) {
+                i=$('.img li').length-2;
+                $('.img').css({left:-($('.img li').length-1)*600});
+            }
+            $('.img').stop().animate({left:-i*1200},300);
+            $('.num li').eq(i).addClass('active').siblings().removeClass('active');
+        })
+
+        //设置按钮的显示和隐藏
+        $('.banner').hover(function(){
+            $('.btn').show();
+        },function(){
+            $('.btn').hide();
+        })
+
+        //鼠标划入圆点
+        $('.num li').mouseover(function(){
+            var _index=$(this).index();
+            $('.img').stop().animate({left:-_index*1200},150);
+            $('.num li').eq(_index).addClass('active').siblings().removeClass('active');
+        })
+
+        //定时器自动播放
+        timer=setInterval(function(){
+            i++;
+            if (i==$('.img li').length) {
+                i=1;
+                $('.img').css({left:0});
+            };
+
+            $('.img').stop().animate({left:-i*1200},300);
+            if (i==$('.img li').length-1) {
+                $('.num li').eq(0).addClass('active').siblings().removeClass('active');
+            }else{
+                $('.num li').eq(i).addClass('active').siblings().removeClass('active');
+            }
+        },1000)
+
+        //鼠标移入，暂停自动播放，移出，开始自动播放
+        $('.banner').hover(function(){
+            clearInterval(timer);
+        },function(){
+            timer=setInterval(function(){
+                i++;
+                if (i==$('.img li').length) {
+                    i=1;
+                    $('.img').css({left:0});
+                };
+
+                $('.img').stop().animate({left:-i*1200},300);
+                if (i==$('.img li').length-1) {
+                    $('.num li').eq(0).addClass('active').siblings().removeClass('active');
+                }else{
+                    $('.num li').eq(i).addClass('active').siblings().removeClass('active');
+                }
+            },1000)
+        })
+
+    })
+</script>
